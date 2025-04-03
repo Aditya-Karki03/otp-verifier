@@ -1,0 +1,28 @@
+{
+  "name": "otp-verifier",
+  "version": "1.0.0",
+  "description": "This is a otp generator and verifier, without having to store OTP in Database",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aditya-Karki03/otp-verifier.git"
+  },
+  "author": "Aditya Karki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aditya-Karki03/otp-verifier/issues"
+  },
+  "homepage": "https://github.com/Aditya-Karki03/otp-verifier#readme",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
+    "typescript": "^5.8.2"
+  }
+}
