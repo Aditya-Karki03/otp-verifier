@@ -1,8 +1,9 @@
 {
   "name": "otp-verifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a otp generator and verifier, without having to store OTP in Database",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types":"dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"

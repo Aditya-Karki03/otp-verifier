@@ -7,7 +7,7 @@ interface generateOtpInpData {
 
 interface verifyOtpInpData {
   email: string;
-  otp: string;
+  otp: number;
   hash: string;
 }
 
@@ -28,6 +28,8 @@ export const otpGenerator = async (data: generateOtpInpData) => {
     otp: randomOtp,
   };
 };
+
+//code to verify the otp
 export const otpVerifier = async (data: verifyOtpInpData) => {
   try {
     const dataInArr = data?.hash?.split(".");
@@ -40,12 +42,13 @@ export const otpVerifier = async (data: verifyOtpInpData) => {
       };
     }
     const dataToBeHashed = `${data?.email}.${data?.otp}.${expiresIn}`;
-    const onlyHash = dataInArr.splice(dataInArr.length - 1, 1).join(".");
+    dataInArr.splice(dataInArr.length - 1, 1);
+    const onlyHash = dataInArr.join(".");
     const ok = await bcrypt.compare(dataToBeHashed, onlyHash);
     if (!ok) {
       return {
         isVerified: false,
-        message: "Invalid OTP. Check your email",
+        message: "Invalid OTP.",
       };
     }
     return {
