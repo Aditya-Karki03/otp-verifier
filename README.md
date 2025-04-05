@@ -47,11 +47,14 @@ yarn install otp-verifier
 
 ### Verify OTP
 
+Use the hash generated from the otpGenerator i.e. hashedData
+Use the otp generated from the otpGenerator i.e. otp
+
 ```
  const {isVerified, message}=await otpVerifier({
      email: 'johnDoe@gmail.com';
-     otp: '121212';
-     hash: 'asdfasdf.1212.342342.34123.12.afadfadeawr.adfasdfhgrserty';
+     otp: otp;
+     hash: hashedData
  })
 ```
 
